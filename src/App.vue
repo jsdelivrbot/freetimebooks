@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="./assets/riv0066-051.jpg" alt="title_img" width="40%" height="40%">
+    <h1>じゆうじかんちょう</h1>
+    <hr>
     <router-view/>
   </div>
 </template>
