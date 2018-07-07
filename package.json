@@ -1,6 +1,6 @@
 {
   "name": "freetimebooks",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "This project is a sub project of styles learned by mysons",
   "author": "se-like",
   "keywords": [
@@ -9,18 +9,12 @@
     "express"
   ],
   "private": true,
-  "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
-    "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
-  },
   "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
     "node-gyp": "^3.7.0",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1",
-    "ejs": "^2.5.6",
-    "express": "^4.15.2"
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -78,12 +72,6 @@
   "engines": {
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
-  },
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "heroku-postbuild": "npm run build"
   },
   "browserslist": [
     "> 1%",
