@@ -12,14 +12,27 @@ export default {
   name: 'App',
 };
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style lang="scss" scoped>
+  @mixin flex-vender() {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+  }
+  .task-list {
+    @include flex-vender;
+    flex-direction: column;
+    align-items: center;
+    &__item {
+      width: 270px;
+      text-align: left;
+      $element: #{&};
+      &--checked {
+        @extend #{$element};
+        color: #85a6c6;
+      }
+    }
+  }
 </style>

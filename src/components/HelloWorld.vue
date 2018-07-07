@@ -6,8 +6,14 @@
     <div>
       <form id="registForm">
         <div>
-        <button id="regist" style="background-color:#5882FA;">とうろく</button>
-        <button id="delete" style="background-color:#F78181;">とりけし</button>
+        <button type="button"
+          v-on:click="regist('success')"
+          style="background-color:#5882FA;">とうろく
+        </button>
+        <button type="button"
+          v-on:click="regist('failed')"
+          style="background-color:#F78181;">とりけし
+        </button>
         </div>
         <select name="なまえ" id="who">
           <option value="-">-</option>
@@ -21,6 +27,20 @@
         </select>
         <input type="time" id="time" placeholder="じかんをにゅうりょくしてください。">
       </form>
+      <div class="action-list">
+        <label class="action-list__item">
+          <input type="checkbox"><button>EDIT</button>vue-r
+        </label>
+        <label class="action-list__item">
+          <input type="checkbox"><button>EDIT</button>vuex
+        </label>
+        <label class="action-list__item">
+          <input type="checkbox"><button>EDIT</button>vue-loader
+        </label>
+        <label class="action-list__item--checked">
+          <input type="checkbox" checked><button>EDIT</button>awesome-vue
+        </label>
+      </div>
     </div>
   </div>
 </template>
@@ -30,26 +50,40 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      msg: 'Styles learned by my sons.',
     };
+  },
+  methods: {
+    regist(msg2) {
+      console.log(msg2);
+    },
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
+<style lang="scss" scoped>
+@mixin flex-vender() {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.action-list {
+  @include flex-vender;
+  flex-direction: column;
+  align-items: center;
+  &__item {
+    width: 270px;
+    text-align: left;
+    $element: #{&};
+    &--checked {
+      @extend #{$element};
+      color: #85a6c6;
+    }
+
+  }
+
 }
 </style>
