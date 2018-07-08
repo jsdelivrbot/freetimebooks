@@ -7,11 +7,11 @@
       <form id="registForm">
         <div>
         <button type="button"
-          v-on:click="regist('success')"
+          v-on:click="regist()"
           style="background-color:#5882FA;">とうろく
         </button>
         <button type="button"
-          v-on:click="regist('failed')"
+          v-on:click="regist()"
           style="background-color:#F78181;">とりけし
         </button>
         </div>
@@ -54,8 +54,8 @@ export default {
     };
   },
   methods: {
-    regist(msg2) {
-      console.log(msg2);
+    regist() {
+      // console.log(msg2);
     },
   },
 };
