@@ -14,7 +14,7 @@
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js",
     "postinstall": "npm install express",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "ejs": "^2.6.1",
